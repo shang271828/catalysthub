@@ -38,7 +38,7 @@ class MysqlPipeline(object):
         try:
             self.conn = mysql.connector.connect(
                 user='root',
-                password='hoboom',
+                password='KeYpZrZx',
                 host = settings['MYSQL_SERVER'],
                 database=settings['MYSQL_DB'],
                 charset='utf8'
@@ -55,7 +55,6 @@ class MysqlPipeline(object):
 
     def process_item(self, item, spider):
         try:
-            #if spider.name == 'choiceBondSpider' or spider.name=='choiceBondGetSpider' :
             if self.is_new(item):  
                 self.insert_data(item)
         except Exception as e:
@@ -66,7 +65,6 @@ class MysqlPipeline(object):
 
     def insert_data(self, item):  
         insertSql = """insert into """+settings['MYSQL_TABLE']+""" (%s) values ( %s )""" 
-        item['secuList'] = json.dumps(item['secuList'])
         keys = item.fields.keys()    
         fields = u','.join(keys)    
         qm = u','.join([u'%s'] * len(keys))    

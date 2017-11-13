@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for choice project
+# Scrapy settings for catalysthub project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,13 +9,13 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'choice'
+BOT_NAME = 'catalysthub'
 
-SPIDER_MODULES = ['choice.spiders']
-NEWSPIDER_MODULE = 'choice.spiders'
+SPIDER_MODULES = ['catalysthub.spiders']
+NEWSPIDER_MODULE = 'catalysthub.spiders'
 
 LOG_LEVEL = "ERROR"
-LOG_FILE = "/data/logs/scrapy/choice.log"
+LOG_FILE = "/data/wwwlogs/scrapy/catalysthub.log"
 LOG_FORMAT = "%(asctime)s; %(levelname)s; %(message)s"
 
 
@@ -53,13 +53,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'choice.middlewares.ChoiceSpiderMiddleware': 543,
+#    'catalysthub.middlewares.ChoiceSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'choice.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'catalysthub.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -71,8 +71,8 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'choice.pipelines.MongoDBPipeline': 300,
-    'choice.pipelines.MysqlPipeline':300
+#    'catalysthub.pipelines.MongoDBPipeline': 300,
+    'catalysthub.pipelines.MysqlPipeline':300
 }
 
 MONGODB_SERVER = "127.0.0.1"
@@ -80,7 +80,7 @@ MONGODB_PORT = 27017
 MONGODB_DB = "scrapy"
 MONGODB_COLLECTION = "choice_news"
 
-MYSQL_SERVER = "10.9.23.110"
+MYSQL_SERVER = "127.0.0.1"
 MYSQL_PORT=3306
 MYSQL_DB="scrapy"
 MYSQL_TABLE="choice_news"
